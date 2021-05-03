@@ -10,13 +10,13 @@ function ProductConfig (){
         fetchConfigList()
       },[]);
 
-   
+
 
     let fetchConfigList = async()=>{
         try {
-            let data = await axios.get('/dashboard/list')
+            let data = await axios.get('https://stage-pre-order.gonoise.in/dashboard/list')
             console.log(data.data.data, "data")
-                setProducts(data.data.data) 
+                setProducts(data.data.data)
         } catch (error) {
             console.log(error, "fetchlist")
         }
@@ -39,12 +39,12 @@ function ProductConfig (){
     //     } catch (error) {
     //         console.log(error, "addconfig")
     //     }
-        
+
     // }
 
     let deleteConfig = async(id)=>{
         try {
-            let data = await axios.delete(`/dashboard/remove/${id}`)
+            let data = await axios.delete(`https://stage-pre-order.gonoise.in/dashboard/remove/${id}`)
             console.log(data.data, "status delete is ")
             if(data.data.status==="200"){
                 fetchConfigList()
@@ -53,9 +53,9 @@ function ProductConfig (){
                 alert("something went wrong")
             }
         } catch (error) {
-            
+
         }
-        
+
     }
 
     return(
@@ -71,7 +71,7 @@ function ProductConfig (){
                         </tr>
                     </thead>
                     <tbody>
-                        
+
                        {products.map((product, key)=>
                            (
                             <tr>
@@ -85,7 +85,7 @@ function ProductConfig (){
                                </tr>
                            )
                        )}
-                        
+
                     </tbody>
                     </Table>
             )}

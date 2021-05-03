@@ -12,13 +12,13 @@ function Orders (){
         fetchList()
       },[]);
 
-   
+
 
     let fetchList = async()=>{
         try {
-            let data = await axios.get('/dashboard/order')
+            let data = await axios.get('https://stage-pre-order.gonoise.in/dashboard/order')
             console.log(data.data.data, "data")
-            setOrders(data.data.data) 
+            setOrders(data.data.data)
         } catch (error) {
             console.log(error, "fetchlist")
         }
@@ -41,7 +41,7 @@ function Orders (){
                         </tr>
                     </thead>
                     <tbody>
-                        
+
                        {orders.map((order, key)=>
                            (
                             <tr>
@@ -54,7 +54,7 @@ function Orders (){
                                </tr>
                            )
                        )}
-                        
+
                     </tbody>
                     </Table>
             )}

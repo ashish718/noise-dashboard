@@ -11,13 +11,13 @@ function ProductList (){
         fetchList()
       },[]);
 
-   
+
 
     let fetchList = async()=>{
         try {
-            let data = await axios.get('/dashboard/products')
+            let data = await axios.get('https://stage-pre-order.gonoise.in/dashboard/products')
             console.log(data.data.data, "data")
-                setProducts(data.data.data) 
+                setProducts(data.data.data)
         } catch (error) {
             console.log(error, "fetchlist")
         }
@@ -34,14 +34,14 @@ function ProductList (){
                 "amount":amount,
                 "title": product.title
             }
-            let data = await axios.post('/dashboard/add', obj)
+            let data = await axios.post('https://stage-pre-order.gonoise.in/dashboard/add', obj)
             if(data.status==="200"){
 
             }
         } catch (error) {
             console.log(error, "addconfig")
         }
-        
+
     }
 
     return(
@@ -57,7 +57,7 @@ function ProductList (){
                         </tr>
                     </thead>
                     <tbody>
-                        
+
                        {products.map((product, key)=>
                            (
                             <tr>
@@ -70,7 +70,7 @@ function ProductList (){
                                </tr>
                            )
                        )}
-                        
+
                     </tbody>
                     </Table>
             )}
