@@ -1,0 +1,9 @@
+.nav-container{
+    background-color: silver;
+    padding: 1%;
+    margin-bottom: 1em;
+}
+.li-nav{
+    display: inline-block;
+    margin-left: 1em;
+}
