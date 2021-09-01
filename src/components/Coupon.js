@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import {Form, Button, Tabs, Tab} from 'react-bootstrap';
 //import tab pages
-import Upload from '../pages/Upload';
-import CouponData from '../pages/CouponData';
-import CouponUsed from '../pages/CouponUsed';
-import CouponStudent from '../pages/CouponStudent';
-import CouponAlign from '../pages/CouponAlign';
-import RegisterStudent from '../pages/RegisterStudent'
+import Upload from '../pages/student/Upload';
+import CouponData from '../pages/student/CouponData';
+import CouponUsed from '../pages/student/CouponUsed';
+import CouponStudent from '../pages/student/CouponStudent';
+import CouponAlign from '../pages/student/CouponAlign';
+import RegisterStudent from '../pages/student/RegisterStudent'
 
 function Coupon(){
 

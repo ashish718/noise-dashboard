@@ -16,7 +16,7 @@ function RegisterStudent(){
 
     let fetchRegisterList = async()=>{
         try {
-            let data = await axios.get('https://stage-pre-order.gonoise.in/student/register')
+            let data = await axios.get(`http://localhost:9000/student/register`)
             setStudentList(data.data.data)
         } catch (error) {
             console.log(error, "studentList")
@@ -58,8 +58,8 @@ function RegisterStudent(){
                                 <td>{key+1}</td>
                                <td>{student.c_id}</td>
                                <td>{student.email}</td>
-                               <td>
-                                {student.stud_details.sort((a, b)=>b.update_timestamp - a.update_timestamp).map((data, i)=>
+                               {/* <td>
+                                {student.stud_details.sort((a, b)=>b.upd_date - a.upd_date).map((data, i)=>
                                     (
                                         <ul>
                                         <li>Course Name: {data.course}</li>
@@ -71,7 +71,7 @@ function RegisterStudent(){
                                         
                                     )
                                 )}
-                               </td>
+                               </td> */}
                                </tr>
                            )
                        )}

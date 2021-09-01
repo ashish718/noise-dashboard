@@ -22,6 +22,9 @@ function Nav(){
         <Link to="/coupon">
           <li className = "li-nav">Coupon</li>
         </Link>
+        <Link to="/app-section">
+          <li className = "li-nav">App-Home</li>
+        </Link>
       </ul>
     </nav>
 

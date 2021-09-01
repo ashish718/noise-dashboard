@@ -15,7 +15,7 @@ function ProductList (){
 
     let fetchList = async()=>{
         try {
-            let data = await axios.get('https://stage-pre-order.gonoise.in/dashboard/products')
+            let data = await axios.get('http://localhost:9000/dashboard/products')
             console.log(data.data.data, "data")
                 setProducts(data.data.data)
         } catch (error) {
@@ -34,7 +34,7 @@ function ProductList (){
                 "amount":amount,
                 "title": product.title
             }
-            let data = await axios.post('https://stage-pre-order.gonoise.in/dashboard/add', obj)
+            let data = await axios.post('http://localhost:9000/dashboard/add', obj)
             if(data.status==="200"){
 
             }

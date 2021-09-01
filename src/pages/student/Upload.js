@@ -14,7 +14,7 @@ function Upload(){
     ;
     console.log(scvdata);
     axios
-      .post(`https://stage-pre-order.gonoise.in/student/codes`, scvdata)
+      .post(`http://localhost:9000/student/codes`, scvdata)
       .then((res) => {
           console.log(res, "res")
           alert('File Successfully uploaded')

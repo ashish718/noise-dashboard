@@ -5,6 +5,7 @@ import ProductConfig from './components/ProductConfig'
 import ProductList from './components/ProductList'
 import Pincode from './components/Pincode'
 import Coupon from './components/Coupon'
+import AppHome from './components/AppHome'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
@@ -20,6 +21,7 @@ function App() {
             <Route path="/list" component={ProductList}/>
             <Route path="/pincode" component={Pincode}/>
             <Route path="/coupon" component={Coupon}/>
+            <Route path="/app-section" component={AppHome}/>
           </Switch>
       </div>
     </Router>

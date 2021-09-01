@@ -1,0 +1,66 @@
+# Query: pre-order.gonoise
+# ContextLines: 1
+
+13 results - 10 files
+
+src/components/AppHome.js:
+  25          }
+  26:         let fetchdata = await axios.get('https://stage-pre-order.gonoise.in/mobile/category', {headers:req_headers})
+  27          .then(data=>{
+
+  55          let payloadString = JSON.stringify(updPayload)
+  56:         let updateData = await axios.post('https://stage-pre-order.gonoise.in/mobile/home', {headers:req_headers, payload:payloadString})
+  57          .then(data=>{
+
+src/components/Orders.js:
+  18          try {
+  19:             let data = await axios.get('https://stage-pre-order.gonoise.in/dashboard/order')
+  20              console.log(data.data.data, "data")
+
+src/components/Pincode.js:
+  16      axios
+  17:       .post(`https://stage-pre-order.gonoise.in/dashboard/pincode`, scvdata)
+  18        .then((res) => {
+
+src/components/ProductConfig.js:
+  16          try {
+  17:             let data = await axios.get('https://stage-pre-order.gonoise.in/dashboard/list')
+  18              console.log(data.data.data, "data")
+
+  46          try {
+  47:             let data = await axios.delete(`https://stage-pre-order.gonoise.in/dashboard/remove/${id}`)
+  48              console.log(data.data, "status delete is ")
+
+src/components/ProductList.js:
+  17          try {
+  18:             let data = await axios.get('https://stage-pre-order.gonoise.in/dashboard/products')
+  19              console.log(data.data.data, "data")
+
+  36              }
+  37:             let data = await axios.post('https://stage-pre-order.gonoise.in/dashboard/add', obj)
+  38              if(data.status==="200"){
+
+src/pages/student/CouponAlign.js:
+  14          try {
+  15:             let data = await axios.get(`https://stage-pre-order.gonoise.in/student/coupon/align`)
+  16              setCouponList(data.data.data)
+
+src/pages/student/CouponData.js:
+  14          try {
+  15:             let data = await axios.get(`https://stage-pre-order.gonoise.in/student/coupon/all`)
+  16              setCouponList(data.data.data)
+
+src/pages/student/CouponUsed.js:
+  14          try {
+  15:             let data = await axios.get(`https://stage-pre-order.gonoise.in/student/coupon/used`)
+  16              setCouponList(data.data.data)
+
+src/pages/student/RegisterStudent.js:
+  18          try {
+  19:             let data = await axios.get(`https://stage-pre-order.gonoise.in/student/register`)
+  20              setStudentList(data.data.data)
+
+src/pages/student/Upload.js:
+  16      axios
+  17:       .post(`https://stage-pre-order.gonoise.in/student/codes`, scvdata)
+  18        .then((res) => {

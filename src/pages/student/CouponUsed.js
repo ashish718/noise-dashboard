@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import {Form, Button, Tabs, Table} from 'react-bootstrap';
 import axios from 'axios'
 
-
 function CouponUsed(){
     const [couponList, setCouponList] = useState([])
 
@@ -13,7 +12,7 @@ function CouponUsed(){
 
       let fetchCouponList = async()=>{
         try {
-            let data = await axios.get('https://stage-pre-order.gonoise.in/student/coupon/used')
+            let data = await axios.get(`http://localhost:9000/student/coupon/used`)
             setCouponList(data.data.data)
         } catch (error) {
             console.log(error, "fetchCouponList")
