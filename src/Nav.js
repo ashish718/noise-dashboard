@@ -21,7 +21,7 @@ function Nav(){
           <li className = "li-nav">Pincode</li>
         </Link> */}
         <Link to="/coupon">
-          <li className = "li-nav">Coupon</li>
+          <li className = "li-nav">Student</li>
         </Link>
         <Link to="/app-section">
           <li className = "li-nav">App-Home</li>
