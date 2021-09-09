@@ -23,7 +23,7 @@ function AppHome (){
         let req_headers = {
             "x-auth-secret":"0329b8ad3bce0bcfdda8ca65c37143c3ccc1e8ae0545da19898ca08bba8ed1a5"
         }
-        let fetchdata = await axios.get('http://localhost:9000/mobile/category', {headers:req_headers})
+        let fetchdata = await axios.get('https://stage-pre-order.gonoise.in/mobile/category', {headers:req_headers})
         .then(data=>{
             console.log(data.data.data, "data----->");
             setBanner1(data.data.data.banner1)
@@ -54,7 +54,7 @@ function AppHome (){
         }
         let payloadString = JSON.stringify(updPayload)
         console.log(payloadString, "payload string si ----->")
-        let updateData = await axios.post('http://localhost:9000/mobile/home', {headers:req_headers, payload:payloadString})
+        let updateData = await axios.post('https://stage-pre-order.gonoise.in/mobile/home', {headers:req_headers, payload:payloadString})
         .then(data=>{
             console.log(data, "dataß")
             console.log(data.data.status)

@@ -12,7 +12,7 @@ function CouponAlign(){
 
       let fetchCouponList = async()=>{
         try {
-            let data = await axios.get(`http://localhost:9000/student/coupon/align`)
+            let data = await axios.get(`https://stage-pre-order.gonoise.in/student/coupon/align`)
             setCouponList(data.data.data)
         } catch (error) {
             console.log(error, "fetchCouponList")

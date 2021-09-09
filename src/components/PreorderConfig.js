@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import {Table} from 'react-bootstrap';
 
-function ProductConfig (){
+function PreorderConfig (){
     const [products, setProducts] = useState([])
-    const [amount, setAmount] = useState()
     useEffect(() => {
         // Update the document title using the browser API
         fetchConfigList()
@@ -14,7 +13,7 @@ function ProductConfig (){
 
     let fetchConfigList = async()=>{
         try {
-            let data = await axios.get('https://stage-pre-order.gonoise.in/dashboard/list')
+            let data = await axios.get('https://stage-pre-order.gonoise.in/dashboard/preorder/product')
             console.log(data.data.data, "data")
                 setProducts(data.data.data)
         } catch (error) {
@@ -22,32 +21,14 @@ function ProductConfig (){
         }
     }
 
-    // let updateConfig = async(product)=>{
-    //     try {
-    //         if(amount>parseInt(product.variants[0].price)){
-    //             return alert('Pre book amount is greater than product price')
-    //         }
-    //         let obj = {
-    //             "p_id":product.id,
-    //             "amount":amount,
-    //             "title": product.title
-    //         }
-    //         let data = await axios.post('/dashboard/add', obj)
-    //         if(data.status==="200"){
-
-    //         }
-    //     } catch (error) {
-    //         console.log(error, "addconfig")
-    //     }
-
-    // }
 
     let deleteConfig = async(id)=>{
         try {
-            let data = await axios.delete(`https://stage-pre-order.gonoise.in/dashboard/remove/${id}`)
+            let data = await axios.delete(`https://stage-pre-order.gonoise.in/dashboard/preorder/product/${id}`)
             console.log(data.data, "status delete is ")
             if(data.data.status==="200"){
                 fetchConfigList()
+                alert("product removed from preorder sms")
             }
             else{
                 alert("something went wrong")
@@ -66,8 +47,7 @@ function ProductConfig (){
                         <tr>
                         <th>#</th>
                         <th>Product Id</th>
-                        <th>Title</th>
-                        <th>Pre Booking Amount</th>
+                        <th>Added On</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -77,10 +57,7 @@ function ProductConfig (){
                             <tr>
                                 <td>{key+1}</td>
                                <td>{product.p_id}</td>
-                               <td>{product.title}</td>
-                               <td>{product.pre_amount}</td>
-                               {/* <td><input type="text" placeholder="Enter X-amount or %" value={product.pre_amount} onChange={(e)=>setAmount(e.target.value)}/></td> */}
-                               {/* <td><button onClick={()=>updateConfig(product)}>Update</button></td> */}
+                               <td>{product.timestamp}</td>
                                <td><button onClick={()=>deleteConfig(product.p_id)}>Delete</button></td>
                                </tr>
                            )
@@ -93,4 +70,4 @@ function ProductConfig (){
     )
 }
 
-export default ProductConfig
+export default PreorderConfig

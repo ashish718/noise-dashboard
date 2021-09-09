@@ -14,7 +14,7 @@ function Pincode(){
     scvdata.append("file", csvData);
     console.log(scvdata);
     axios
-      .post(`http://localhost:9000/dashboard/pincode`, scvdata)
+      .post(`https://stage-pre-order.gonoise.in/dashboard/pincode`, scvdata)
       .then((res) => {
       })
       .catch((error) => {

@@ -16,7 +16,7 @@ function RegisterStudent(){
 
     let fetchRegisterList = async()=>{
         try {
-            let data = await axios.get(`http://localhost:9000/student/register`)
+            let data = await axios.get(`https://stage-pre-order.gonoise.in/student/register`)
             setStudentList(data.data.data)
         } catch (error) {
             console.log(error, "studentList")
