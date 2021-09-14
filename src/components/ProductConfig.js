@@ -14,7 +14,7 @@ function ProductConfig (){
 
     let fetchConfigList = async()=>{
         try {
-            let data = await axios.get('https://stage-pre-order.gonoise.in/dashboard/list')
+            let data = await axios.get(`${process.env.REACT_APP_BASE_URL}/dashboard/list`)
             console.log(data.data.data, "data")
                 setProducts(data.data.data)
         } catch (error) {
@@ -44,7 +44,7 @@ function ProductConfig (){
 
     let deleteConfig = async(id)=>{
         try {
-            let data = await axios.delete(`https://stage-pre-order.gonoise.in/dashboard/remove/${id}`)
+            let data = await axios.delete(`${process.env.REACT_APP_BASE_URL}/dashboard/remove/${id}`)
             console.log(data.data, "status delete is ")
             if(data.data.status==="200"){
                 fetchConfigList()

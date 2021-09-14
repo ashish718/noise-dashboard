@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
+import dateFormat from "dateformat";
 import {Table} from 'react-bootstrap';
 
 function PreorderConfig (){
-    const [products, setProducts] = useState([])
+    const [products, setProducts] = useState([]);
     useEffect(() => {
         // Update the document title using the browser API
         fetchConfigList()
@@ -13,7 +14,7 @@ function PreorderConfig (){
 
     let fetchConfigList = async()=>{
         try {
-            let data = await axios.get('https://stage-pre-order.gonoise.in/dashboard/preorder/product')
+            let data = await axios.get(`${process.env.REACT_APP_BASE_URL}/dashboard/preorder/product`)
             console.log(data.data.data, "data")
                 setProducts(data.data.data)
         } catch (error) {
@@ -24,7 +25,7 @@ function PreorderConfig (){
 
     let deleteConfig = async(id)=>{
         try {
-            let data = await axios.delete(`https://stage-pre-order.gonoise.in/dashboard/preorder/product/${id}`)
+            let data = await axios.delete(`${process.env.REACT_APP_BASE_URL}/dashboard/preorder/product/${id}`)
             console.log(data.data, "status delete is ")
             if(data.data.status==="200"){
                 fetchConfigList()
@@ -47,6 +48,7 @@ function PreorderConfig (){
                         <tr>
                         <th>#</th>
                         <th>Product Id</th>
+                        <th>Title</th>
                         <th>Added On</th>
                         </tr>
                     </thead>
@@ -57,7 +59,8 @@ function PreorderConfig (){
                             <tr>
                                 <td>{key+1}</td>
                                <td>{product.p_id}</td>
-                               <td>{product.timestamp}</td>
+                               <td>{product.p_name}</td>
+                               <td>{dateFormat(product.timestamp, "dd-mm-yyyy h:mm:ss")}</td>
                                <td><button onClick={()=>deleteConfig(product.p_id)}>Delete</button></td>
                                </tr>
                            )
