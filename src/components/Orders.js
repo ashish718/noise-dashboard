@@ -16,7 +16,7 @@ function Orders (){
 
     let fetchList = async()=>{
         try {
-            let data = await axios.get('https://stage-pre-order.gonoise.in/dashboard/order')
+            let data = await axios.get(`${process.env.REACT_APP_BASE_URL}/dashboard/order`)
             console.log(data.data.data, "data")
             setOrders(data.data.data)
         } catch (error) {

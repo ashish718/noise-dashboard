@@ -14,7 +14,7 @@ function PreorderProductList (){
 
     let fetchList = async()=>{
         try {
-            let data = await axios.get('https://stage-pre-order.gonoise.in/dashboard/products')
+            let data = await axios.get(`${process.env.REACT_APP_BASE_URL}/dashboard/products`)
             console.log(data.data.data, "data")
                 setProducts(data.data.data)
         } catch (error) {
@@ -24,11 +24,13 @@ function PreorderProductList (){
 
     let addConfig = async(product)=>{
         try {
-            
+            console.log("product",product)
+            // debugger;
             let obj = {
-                "p_id":product.id
+                "p_id":product.id,
+                "p_name":product.title
             }
-            let data = await axios.post('https://stage-pre-order.gonoise.in/dashboard/preorder/product/add', obj)
+            let data = await axios.post(`${process.env.REACT_APP_BASE_URL}/dashboard/preorder/product/add`, obj)
             console.log(data, "data is ------------------------")
             if(data.data.status==="200"){
                return alert("Added to preorder sms")
