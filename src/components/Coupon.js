@@ -20,7 +20,7 @@ function Coupon(){
                 <Tab eventKey="couponData" title="CouponData">
                     <CouponData />
                 </Tab>
-                <Tab eventKey="couponUsed" title="CouponUsed">
+                {/* <Tab eventKey="couponUsed" title="CouponUsed">
                     <CouponUsed />
                 </Tab>
                 <Tab eventKey="couponAlign" title="couponAlign">
@@ -31,7 +31,7 @@ function Coupon(){
                 </Tab>
                 <Tab eventKey="registerStudent" title="registerStudent">
                     <RegisterStudent />
-                </Tab>
+                </Tab> */}
             </Tabs>
         </div>
     )
