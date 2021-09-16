@@ -90,12 +90,12 @@ function AppHome() {
                 <div>
                     <h1 className="font-weight-bold">Banner 2</h1>
                     <label className="mb-2 mt-2">Img Url :</label>
-                    <input type="text" style={{width:"70%"}}  value={banner2.img} onChange={e => setBanner2({ img: e.target.value, handle: banner1.handle })} />
+                    <input type="text" style={{width:"70%"}}  value={banner2.img} onChange={e => setBanner2({ img: e.target.value, handle: banner2.handle })} />
                     <br/>
                     <img style={{width:"80%",borderRadius:8}} src={banner2.img} alt="banner"/>
                     <br />
                     <label className="mr-2 mt-4">Handle :</label>
-                    <input type="text" style={{width:"70%"}} value={banner2.handle} onChange={e => setBanner2({ img: banner1.img, handle: e.target.value })} />
+                    <input type="text" style={{width:"70%"}} value={banner2.handle} onChange={e => setBanner2({ img: banner2.img, handle: e.target.value })} />
                 </div>
             </div>
             
