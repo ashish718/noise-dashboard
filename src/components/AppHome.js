@@ -23,7 +23,8 @@ function AppHome() {
         let req_headers = {
             "x-auth-secret": "0329b8ad3bce0bcfdda8ca65c37143c3ccc1e8ae0545da19898ca08bba8ed1a5"
         }
-        let fetchdata = await axios.get(`${process.env.REACT_APP_BASE_URL}/mobile/category`, { headers: req_headers })
+        let fetchdata = await axios
+        .get(`${process.env.REACT_APP_BASE_URL}/mobile/category`, { headers: req_headers })
             .then(data => {
                 console.log(data.data.data, "data----->");
                 setBanner1(data.data.data.banner1)
@@ -54,7 +55,13 @@ function AppHome() {
         }
         let payloadString = JSON.stringify(updPayload)
         console.log(payloadString, "payload string si ----->")
-        let updateData = await axios.post(`${process.env.REACT_APP_BASE_URL}/mobile/home`, { headers: req_headers, payload: payloadString })
+        let updateData = await axios({
+            method: 'POST',
+            url: `${process.env.REACT_APP_BASE_URL}/mobile/home`,
+            headers: req_headers,
+            data: {payload:payloadString}
+          })
+        // .post('https://stage-pre-order.gonoise.in/mobile/home', { headers: req_headers, payload: payloadString })
             .then(data => {
                 console.log(data, "dataß")
                 console.log(data.data.status)
@@ -92,7 +99,7 @@ function AppHome() {
                     <label className="mb-2 mt-2">Img Url :</label>
                     <input type="text" style={{width:"70%"}}  value={banner2.img} onChange={e => setBanner2({ img: e.target.value, handle: banner2.handle })} />
                     <br/>
-                    <img style={{width:"80%",borderRadius:8}} src={banner2.img} alt="banner"/>
+                    <img style={{width:"80%",borderRadius:8}} src={banner2.img} alt="banner2"/>
                     <br />
                     <label className="mr-2 mt-4">Handle :</label>
                     <input type="text" style={{width:"70%"}} value={banner2.handle} onChange={e => setBanner2({ img: banner2.img, handle: e.target.value })} />
