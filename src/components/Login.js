@@ -14,8 +14,8 @@ export default function LogIn() {
     });
     
     useEffect(() => {
-        const user = localStorage.getItem('token') 
-   if (user && user !== 'undefined') {
+        const userauth = localStorage.getItem('token') 
+   if (userauth && userauth !== 'undefined') {
       history.push('/')
    }
     }, [])
