@@ -21,10 +21,10 @@ function AppHome() {
 
     let HomeData = async () => {
         let req_headers = {
-            "x-auth-secret": "0329b8ad3bce0bcfdda8ca65c37143c3ccc1e8ae0545da19898ca08bba8ed1a5"
+            "x-auth-secret": process.env.REACT_APP_X_SECRET
         }
         let fetchdata = await axios
-        .get(`${process.env.REACT_APP_BASE_URL}/mobile/category`, { headers: req_headers })
+            .get(`${process.env.REACT_APP_BASE_URL}/mobile/category`, { headers: req_headers })
             .then(data => {
                 console.log(data.data.data, "data----->");
                 setBanner1(data.data.data.banner1)
@@ -42,7 +42,7 @@ function AppHome() {
 
     let updateHome = async (e) => {
         let req_headers = {
-            "x-auth-secret": "0329b8ad3bce0bcfdda8ca65c37143c3ccc1e8ae0545da19898ca08bba8ed1a5"
+            "x-auth-secret": process.env.REACT_APP_X_SECRET
         }
         let updPayload = {
             category: categoryArr,
@@ -59,9 +59,9 @@ function AppHome() {
             method: 'POST',
             url: `${process.env.REACT_APP_BASE_URL}/mobile/home`,
             headers: req_headers,
-            data: {payload:payloadString}
-          })
-        // .post('https://stage-pre-order.gonoise.in/mobile/home', { headers: req_headers, payload: payloadString })
+            data: { payload: payloadString }
+        })
+            // .post('https://stage-pre-order.gonoise.in/mobile/home', { headers: req_headers, payload: payloadString })
             .then(data => {
                 console.log(data, "dataß")
                 console.log(data.data.status)
@@ -87,25 +87,25 @@ function AppHome() {
                 <div>
                     <h1 className="font-weight-bold">Banner 1</h1>
                     <label className="mb-2 mt-2">ImgUrl :</label>
-                    <input type="text" style={{width:"70%"}} value={banner1.img} onChange={e => setBanner1({ img: e.target.value, handle: banner1.handle })} />
-                    <br/>
-                    <img style={{width:"80%" ,borderRadius:8}} src={banner1.img} alt="banner"/>
+                    <input type="text" style={{ width: "70%" }} value={banner1.img} onChange={e => setBanner1({ img: e.target.value, handle: banner1.handle })} />
+                    <br />
+                    <img style={{ width: "80%", borderRadius: 8 }} src={banner1.img} alt="banner" />
                     <br />
                     <label className="mr-2 mt-4">Handle :</label>
-                    <input type="text" style={{width:"70%"}} value={banner1.handle} onChange={e => setBanner1({ img: banner1.img, handle: e.target.value })} />
+                    <input type="text" style={{ width: "70%" }} value={banner1.handle} onChange={e => setBanner1({ img: banner1.img, handle: e.target.value })} />
                 </div>
                 <div>
                     <h1 className="font-weight-bold">Banner 2</h1>
                     <label className="mb-2 mt-2">Img Url :</label>
-                    <input type="text" style={{width:"70%"}}  value={banner2.img} onChange={e => setBanner2({ img: e.target.value, handle: banner2.handle })} />
-                    <br/>
-                    <img style={{width:"80%",borderRadius:8}} src={banner2.img} alt="banner2"/>
+                    <input type="text" style={{ width: "70%" }} value={banner2.img} onChange={e => setBanner2({ img: e.target.value, handle: banner2.handle })} />
+                    <br />
+                    <img style={{ width: "80%", borderRadius: 8 }} src={banner2.img} alt="banner2" />
                     <br />
                     <label className="mr-2 mt-4">Handle :</label>
-                    <input type="text" style={{width:"70%"}} value={banner2.handle} onChange={e => setBanner2({ img: banner2.img, handle: e.target.value })} />
+                    <input type="text" style={{ width: "70%" }} value={banner2.handle} onChange={e => setBanner2({ img: banner2.img, handle: e.target.value })} />
                 </div>
             </div>
-            
+
             <h1 className="font-weight-bold">Slider</h1>
             <Table striped bordered hover size="sm">
                 <thead>
@@ -123,7 +123,7 @@ function AppHome() {
                     (
                         <tr>
                             <td>{key + 1}</td>
-                            <td><img style={{width:"90%",borderRadius:5}} src={slide.img} alt=""/></td>
+                            <td><img style={{ width: "90%", borderRadius: 5 }} src={slide.img} alt="" /></td>
                             <td>{slide.img}</td>
                             <td>{slide.handle}</td>
                             <td><input className="mb-2" type="text" placeholder="Enter New Image Url" onChange={e => updateSlider(e, 'img', key)} /> <input type="text" placeholder="Enter New Handle" onChange={e => updateSlider(e, 'handle', key)} /></td>
