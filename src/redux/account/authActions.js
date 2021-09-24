@@ -1,4 +1,6 @@
 import axios from "axios";
+import { Alert } from "react-bootstrap";
+import { toast } from "react-toastify";
 
 export const signIn = (email,password) => {
     return (dispatch) => {
@@ -18,6 +20,10 @@ export const signIn = (email,password) => {
         })
         .catch((error) => {
           console.log(error.response);
+          alert(error.response.data)
+          // toast(error.response.data, {
+          //   position: toast.POSITION.BOTTOM_RIGHT,
+          // });
         });
     };
   };
