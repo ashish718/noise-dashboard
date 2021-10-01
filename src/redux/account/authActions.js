@@ -20,7 +20,11 @@ export const signIn = (email,password) => {
         })
         .catch((error) => {
           console.log(error.response);
-          alert(error.response.data)
+          // alert(error.response.data)
+          dispatch({
+            type: "SIGN_IN_FAILED",
+            error:error.response.data,
+          });
           // toast(error.response.data, {
           //   position: toast.POSITION.BOTTOM_RIGHT,
           // });
