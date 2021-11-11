@@ -36,6 +36,9 @@ function Nav() {
         <Link to="/app-section">
           <li className="li-nav">App-Home</li>
         </Link>
+        <Link to="/spin-wheel">
+          <li className="li-nav">Spin Wheel</li>
+        </Link>
       </ul>
         <Button className="w-40" onClick={() => handleSignOut()}>Sign Out
         </Button>

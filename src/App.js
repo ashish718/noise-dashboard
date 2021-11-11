@@ -6,6 +6,7 @@ import ProductList from './components/ProductList'
 import Pincode from './components/Pincode'
 import Coupon from './components/Coupon'
 import AppHome from './components/AppHome'
+import SpinWheel from './components/SpinWheel'
 import { useSelector } from "react-redux";
 
 //preorder
@@ -34,6 +35,7 @@ function App() {
           <PrivateRoute path="/pincode" component={Pincode} />
           <PrivateRoute path="/coupon" component={Coupon} />
           <PrivateRoute path="/app-section" component={AppHome} />
+          <PrivateRoute path="/spin-wheel" component={SpinWheel} />
         </Switch>
       </div>
     </Router>
