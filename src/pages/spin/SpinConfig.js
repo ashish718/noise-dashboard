@@ -16,7 +16,7 @@ function SpinWheelConfig(){
       "x-auth-secret": "0329b8ad3bce0bcfdda8ca65c37143c3ccc1e8ae0545da19898ca08bba8ed1a5"
     }
     axios
-      .post(`http://stage-pre-order.gonoise.in/dashboard/spin/config`, scvdata, {headers:reqHeaders})
+      .post(`https://stage-pre-order.gonoise.in/dashboard/spin/config`, scvdata, {headers:reqHeaders})
       .then((res) => {
           console.log(res, "res")
           alert('File Successfully uploaded')
