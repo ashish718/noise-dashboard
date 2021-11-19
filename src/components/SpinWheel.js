@@ -3,7 +3,7 @@ import {Form, Button, Tabs, Tab} from 'react-bootstrap';
 //import tab pages
 import SpinConfig from '../pages/spin/SpinConfig';
 import SpinTable from '../pages/spin/SpinTable';
-
+import SpinUser from '../pages/spin/SpinUser';
 
 function SpinWheel(){
 
@@ -16,6 +16,9 @@ function SpinWheel(){
                 </Tab>
                 <Tab eventKey="Spin-Data" title="Spin Config Data">
                     <SpinTable />
+                </Tab>
+                <Tab eventKey="Spin-User" title="Spin User Data">
+                    <SpinUser />
                 </Tab>
             </Tabs>
         </div>
