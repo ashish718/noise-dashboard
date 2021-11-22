@@ -30,7 +30,7 @@ function SpinTable(){
                         <tr>
                         <th>#</th>
                         <th>Label</th>
-                        <th>Code</th>
+                        <th>Coupon Code</th>
                         <th>Probability</th>
                         </tr>
                     </thead>
