@@ -32,7 +32,7 @@ function SpinUser(){
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone</th>
-                        <th>Code</th>
+                        <th>Coupon Code</th>
                         <th>Label</th>
                         <th>Status</th>
                         <th>Created at</th>
