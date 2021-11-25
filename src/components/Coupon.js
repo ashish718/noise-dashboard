@@ -7,7 +7,8 @@ import CouponUsed from '../pages/student/CouponUsed';
 import CouponStudent from '../pages/student/CouponStudent';
 import CouponAlign from '../pages/student/CouponAlign';
 import RegisterStudent from '../pages/student/RegisterStudent'
-
+import Summary from '../pages/student/Summary';
+import Records from '../pages/student/Records';
 function Coupon(){
 
 
@@ -17,13 +18,13 @@ function Coupon(){
                 <Tab eventKey="upload" title="Upload">
                     <Upload />
                 </Tab>
-                <Tab eventKey="couponData" title="CouponData">
-                    <CouponData />
+                <Tab eventKey="records" title="Records">
+                    <Records />
                 </Tab>
-                {/* <Tab eventKey="couponUsed" title="CouponUsed">
-                    <CouponUsed />
+                 <Tab eventKey="Summary" title="Summary">
+                    <Summary />
                 </Tab>
-                <Tab eventKey="couponAlign" title="couponAlign">
+                {/*<Tab eventKey="couponAlign" title="couponAlign">
                     <CouponAlign />
                 </Tab>
                 <Tab eventKey="couponStudent" title="couponStudent">
