@@ -34,7 +34,7 @@ function SpinUser(){
                         <th>Phone</th>
                         <th>Coupon Code</th>
                         <th>Label</th>
-                        <th>Status</th>
+                        <th>isUsed</th>
                         <th>Created at</th>
                         </tr>
                     </thead>

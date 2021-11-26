@@ -16,7 +16,7 @@ function Records(){
 
     let recordData = async()=>{
         try {
-            let data = await axios.get(`https://78ba-223-190-82-219.ngrok.io/student/records`)
+            let data = await axios.get(`http://stage-pre-order.gonoise.in/student/records`)
             console.log(data.data, "record data")
 
             setRecords(data.data.data)
@@ -38,7 +38,7 @@ function Records(){
     let filterDate = async(e)=>{
         e.preventDefault()
         try {
-            let data = await axios.get(`https://78ba-223-190-82-219.ngrok.io/student/records/${sDate}/${eDate}`)
+            let data = await axios.get(`http://stage-pre-order.gonoise.in/student/records/${sDate}/${eDate}`)
             console.log(data.data, "filter record data")
 
             setRecords(data.data.data)
