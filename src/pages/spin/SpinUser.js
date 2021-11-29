@@ -16,7 +16,7 @@ function SpinUser(){
             let reqHeaders = {
                 "x-auth-secret": "0329b8ad3bce0bcfdda8ca65c37143c3ccc1e8ae0545da19898ca08bba8ed1a5"
             }
-            let data = await axios.get(`https://stage-pre-order.gonoise.in/website/spin/user`, {headers:reqHeaders})
+            let data = await axios.get(`${process.env.REACT_APP_BASE_URL}/website/spin/user`, {headers:reqHeaders})
             console.log(data);
             setCouponList(data.data.data)
         } catch (error) {

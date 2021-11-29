@@ -14,7 +14,7 @@ function Upload(){
     ;
     console.log(scvdata);
     axios
-      .post(`https://stage-pre-order.gonoise.in/student/codes`, scvdata)
+      .post(`${process.env.REACT_APP_BASE_URL}/student/codes`, {header:{'x-auth-secret':'0329b8ad3bce0bcfdda8ca65c37143c3ccc1e8ae0545da19898ca08bba8ed1a5'}}, scvdata)
       .then((res) => {
           console.log(res, "res")
           alert('File Successfully uploaded')

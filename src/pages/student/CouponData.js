@@ -12,7 +12,7 @@ function CouponData(){
 
       let fetchCouponList = async()=>{
         try {
-            let data = await axios.get(`https://stage-pre-order.gonoise.in/student/coupon/all`)
+            let data = await axios.get(`${process.env.REACT_APP_BASE_URL}/student/coupon/all`)
             setCouponList(data.data.data)
         } catch (error) {
             console.log(error, "fetchCouponList")

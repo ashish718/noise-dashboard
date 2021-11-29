@@ -14,7 +14,7 @@ function Summary(){
 
     let summaryData = async()=>{
         try {
-            let data = await axios.get(`http://stage-pre-order.gonoise.in/student/coupon/summary/total`)
+            let data = await axios.get(`${process.env.REACT_APP_BASE_URL}/student/coupon/summary/total`)
             console.log(data.data, "summary data")
 
             setSummaryObj(data.data)
