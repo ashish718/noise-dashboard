@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {Form, Button, Tabs, Table} from 'react-bootstrap';
 import axios from 'axios'
+import moment from 'moment'
 
 function SpinUser(){
     const [couponList, setCouponList] = useState([])
@@ -31,11 +32,12 @@ function SpinUser(){
                         <th>#</th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Phone</th>
+                        <th>Contact Number</th>
                         <th>Coupon Code</th>
                         <th>Label</th>
                         <th>isUsed</th>
                         <th>Created at</th>
+                        <th>Last update at</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,7 +52,8 @@ function SpinUser(){
                                <td>{item.u_code}</td>
                                <td>{item.u_code_label}</td>
                                <td>{item.u_flag}</td>
-                               <td>{item.created_at}</td>
+                               <td>{moment(item.created_at).format('DD-MM-YYYY')}</td>
+                               <td>{moment(item.updated_at).format('DD-MM-YYYY')}</td>
                                </tr>
                            )
                        )}
