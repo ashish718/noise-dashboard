@@ -37,7 +37,7 @@ function SpinUser(){
                         <th>Label</th>
                         <th>isUsed</th>
                         <th>Created at</th>
-                        <th>Last update at</th>
+                        <th>Date of use</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -53,7 +53,7 @@ function SpinUser(){
                                <td>{item.u_code_label}</td>
                                <td>{item.u_flag}</td>
                                <td>{moment(item.created_at).format('DD-MM-YYYY')}</td>
-                               <td>{moment(item.updated_at).format('DD-MM-YYYY')}</td>
+                               <td>{(item.u_flag==0?'not used':moment(item.updated_at).format('DD-MM-YYYY'))}</td>
                                </tr>
                            )
                        )}
