@@ -38,7 +38,7 @@ function Records(){
     let filterDate = async(e)=>{
         e.preventDefault()
         try {
-            let data = await axios.get(`${process.env.REACT_APP_BASE_URL}/student/records/${sDate}/${eDate}`)
+            let data = await axios.get(`${process.env.REACT_APP_BASE_URL}/student/records/filter/${sDate}/${eDate}`)
             console.log(data.data, "filter record data")
 
             setRecords(data.data.data)
