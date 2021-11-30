@@ -16,7 +16,7 @@ function Records(){
 
     let recordData = async()=>{
         try {
-            let data = await axios.get(`http://stage-pre-order.gonoise.in/student/records`)
+            let data = await axios.get(`https://stage-pre-order.gonoise.in/student/records`)
             console.log(data.data, "record data")
 
             setRecords(data.data.data)
