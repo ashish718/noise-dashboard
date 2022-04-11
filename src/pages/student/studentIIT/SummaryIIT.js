@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Table } from "react-bootstrap";
+import {baseUrl} from '../../../components/api-config'
 
 const SummaryIIT = () => {
   const [summaryObj, setSummaryObj] = useState({});
@@ -14,7 +15,7 @@ const SummaryIIT = () => {
   const summaryData = async () => {
     try {
       let data = await axios.get(
-        `${process.env.REACT_APP_BASE_URL}/student/iit/coupon/summary/total`
+        `${baseUrl}/student/iit/coupon/summary/total`
       );
       console.log(data.data, "summary data");
 

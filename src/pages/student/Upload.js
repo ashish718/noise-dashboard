@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Form, Button } from "react-bootstrap";
+import {baseUrl} from "../../components/api-config";
 
 function Upload() {
   const [csvData, setCsvData] = useState([]);
@@ -12,7 +13,7 @@ function Upload() {
     scvdata.append("discount", csvData);
     console.log(scvdata);
     axios
-      .post(`${process.env.REACT_APP_BASE_URL}/student/codes`, scvdata)
+      .post(`${baseUrl}/student/codes`, scvdata)
       .then((res) => {
         console.log(res, "res");
         alert("File Successfully uploaded");

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import moment from "moment";
 import { Table } from "react-bootstrap";
+import {baseUrl} from "../../../components/api-config";
 
 const RecordIIT = () => {
   const [record, setRecord] = useState([]);
@@ -16,7 +17,7 @@ const RecordIIT = () => {
   const recordData = async (e) => {
     try {
       let record = await axios.get(
-        `https://stage-pre-order.gonoise.in/student/records/iit`
+        `${baseUrl}/student/records/iit`
       );
       console.log(record.data, "record data");
 

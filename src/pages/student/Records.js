@@ -3,6 +3,7 @@ import axios from "axios";
 import { Table } from "react-bootstrap";
 import moment from "moment";
 // import { format } from "date-fns";
+import {baseUrl} from '../../components/api-config'
 
 function Records() {
   const [records, setRecords] = useState([]);
@@ -18,7 +19,7 @@ function Records() {
   let recordData = async () => {
     try {
       let data = await axios.get(
-        `https://stage-pre-order.gonoise.in/student/records`
+        `${baseUrl}/student/records`
       );
       console.log(data.data, "record data");
 
