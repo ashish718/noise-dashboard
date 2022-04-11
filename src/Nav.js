@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
-import './Nav.css';
+import "./Nav.css";
 import { useDispatch } from "react-redux";
 import { signOut } from "./redux/account/authActions";
 
@@ -39,15 +39,15 @@ function Nav() {
         <Link to="/spin-wheel">
           <li className="li-nav">Spin Wheel</li>
         </Link>
+        <Link to="/couponIIT">
+          <li className="li-nav">Student IIT</li>
+        </Link>
       </ul>
-        <Button className="w-40" onClick={() => handleSignOut()}>Sign Out
-        </Button>
+      <Button className="w-40" onClick={() => handleSignOut()}>
+        Sign Out
+      </Button>
     </nav>
-
-  )
+  );
 }
-
-
-
 
 export default Nav;

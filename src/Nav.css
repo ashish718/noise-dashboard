@@ -7,3 +7,6 @@
     display: inline-block;
     margin-left: 1em;
 }
+.table-responsive {
+    max-height:300px;
+}
