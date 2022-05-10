@@ -1,13 +1,13 @@
 import axios from "axios";
 // import { Alert } from "react-bootstrap";
 // import { toast } from "react-toastify";
-import {authUrl} from '../../components/api-config'
+// import {baseUrl} from '../../components/api-config'
 
 export const signIn = (email, password) => {
   return (dispatch) => {
     axios
       .post(
-        authUrl,
+        process.env.REACT_APP_AUTH,
         { email, password },
         {
           headers: {
