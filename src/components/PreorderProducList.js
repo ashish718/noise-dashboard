@@ -48,11 +48,10 @@ function PreorderProductList() {
       console.log(data, "data is ------------------------");
       if (data.data.status == "200") {
         return alert(data.data.message);
-      } else if (data.data.status === "401") {
-        return alert("Product Id issue, not added for sms");
-      } else if (data.data.status === "402") {
-        return alert("Product already added for preorder sms, check config");
       }
+
+      return alert(data.data.message);
+
     } catch (error) {
       console.log(error, "addconfig");
     }
