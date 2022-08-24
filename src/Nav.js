@@ -18,15 +18,14 @@ function Nav() {
     <nav className="nav-container text-center">
       <ul className="nav-links font-weight-bold">
         <Link to="/list">
-          <li className="li-nav">Product List</li>
+          <li className="li-nav">Shopify Product Sync</li>
         </Link>
-        <Link to="/">
+        {/*<Link to="/">
           <li className="li-nav">Preorder Config</li>
-        </Link>
+        </Link>*/}
         {/* <Link to="/order">
           <li className = "li-nav">Orders</li>
         </Link> */}
-
         {/* <Link to="/pincode">
           <li className = "li-nav">Pincode</li>
         </Link> */}
